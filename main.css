@@ -61,11 +61,12 @@ nav ul li a {
     display: flex;
     justify-content: center; 
     align-items: center;    
-    gap: 10px;              
+    gap: 15px;              
 }
 
 /* Стили для кнопки Get Started */
 nav .get-started {
+    font-size: 18px;
     height: 50px;
     background: #d76b00;
     color: white;
@@ -99,11 +100,11 @@ nav .get-inst {
 }
 
 .hero-content {
-    max-width: 40%;
+    max-width: 55%;
 }
 
 .hero h1 {
-    font-size: 62px;
+    font-size: 70px;
     color: #8c4b26;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -112,21 +113,22 @@ nav .get-inst {
 
 .hero p {
     width: 85%;
-    font-size: 18px;
+    font-size: 22px;
     color: #777777;
     margin-bottom: 50px;
+    line-height: 1.5;
 }
 
 .main-button {
     display: flex;
-    
     align-items: center;    
-    gap: 10px;
+    gap: 20px;
 }
 
 .book-now{
-    height: 50px;
-    width: 120px;
+    font-size: 18px;
+    height: 55px;
+    width: 130px;
     background: #d76b00;
     color: white;
     border: none;
@@ -136,12 +138,13 @@ nav .get-inst {
 }
 
 .watch-video{
+    font-size: 18px;
     font-weight: bold;
     display: flex; 
     justify-content: center; 
     align-items: center;
     width: auto;
-    height: 50px;
+    height: 55px;
     background: #ffffff;
     border-radius: 25px;
     cursor: pointer;
@@ -155,25 +158,126 @@ nav .get-inst {
 /* Отзывы */
 .testimonials {
     padding: 50px;
-    
+    width: 50%;
+    max-width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.testimonials-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.testimonials h2{
+    color: #8c4b26;
+    font-weight: 600;
+    font-family: Josefin Sans;
+    font-size: 30px;
+}
+
+.testimonials-button{
+    display: flex;
+    gap: 15px;
+}
+
+.get-left{
+    justify-content: center; 
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: none;
+    padding: 0;
+}
+.get-right{
+    justify-content: center; 
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #d76b00;
+    border: none;
+    padding: 0;
+}
+
+.swap-img-left{
+    padding-left: 4px;
+    padding-top: 3px;
+    width: 30px; /* Установите нужный размер изображения */
+    height: auto;
+}
+
+.swap-img-right{
+    padding-right: 4px;
+    padding-top: 3px;
+    width: 30px; /* Установите нужный размер изображения */
+    height: auto;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .testimonial {
-    background: #f3ede5;
+    background: #ffffff;
     padding: 20px;
+    padding-top: 5px;
     border-radius: 10px;
     margin-bottom: 20px;
+    width: 300px;
+    height: 230px;
+    line-height: 1.5;
+    font-size: 20px;
+    display: flex; /* Включаем Flexbox */
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    justify-content: space-between; /* Текст вверху, client-info внизу */
 }
 
 .client-info {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-top: 10px;
 }
 
-.client-info img {
+.av-tx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar-img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.like-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.like-img {
+    margin: 0;
+    width: 30px;
+    height: auto;
 }
