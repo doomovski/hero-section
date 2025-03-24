@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /* Основные стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Josefin Sans;
     margin: 0;
     padding: 0;
     background-color: #f9f5ec;
     color: #333;
+    background-image: url('/img/back.jpg');
+    background-size: cover;
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Запрещает повторение изображения */
+    background-attachment: fixed; /* Фиксирует фон при прокрутке */
 }
 
 /* Навигация */
@@ -12,8 +20,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: white;
+    padding: 0px 60px;
+    padding-top: 40px;
+
+    
 }
 
 nav .logo {
@@ -23,13 +33,13 @@ nav .logo {
     gap: 10px;              
 }
 
-nav .logo-img {
+.logo-img {
     width: 30px; /* Установите нужный размер изображения */
     height: auto;
 }
 
 nav .logo-text {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     color: #000000;
 }
@@ -43,7 +53,7 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 /* Стили для контейнера кнопок */
@@ -56,7 +66,7 @@ nav ul li a {
 
 /* Стили для кнопки Get Started */
 nav .get-started {
-    height: 42px;
+    height: 50px;
     background: #d76b00;
     color: white;
     border: none;
@@ -70,8 +80,8 @@ nav .get-inst {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background: #ffffff;
     border-radius: 25px;
     cursor: pointer;
@@ -89,43 +99,63 @@ nav .get-inst {
 }
 
 .hero-content {
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 62px;
     color: #8c4b26;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-weight: 400;
 }
 
 .hero p {
+    width: 85%;
     font-size: 18px;
-    color: #555;
+    color: #777777;
+    margin-bottom: 50px;
 }
 
-.buttons {
-    margin-top: 20px;
+.main-button {
+    display: flex;
+    
+    align-items: center;    
+    gap: 10px;
 }
 
-.book-now, .watch-video {
+.book-now{
+    height: 50px;
+    width: 120px;
     background: #d76b00;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-right: 10px;
 }
 
-.watch-video {
-    background: white;
-    color: #d76b00;
-    border: 2px solid #d76b00;
+.watch-video{
+    font-weight: bold;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: auto;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3); 
+    gap: 10px;
 }
+
 
 /* Отзывы */
 .testimonials {
     padding: 50px;
-    background: #fff;
+    
 }
 
 .testimonial {
