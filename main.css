@@ -1,0 +1,149 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5ec;
+    color: #333;
+}
+
+/* Навигация */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+}
+
+nav .logo {
+    display: flex;           
+    align-items: center;     
+    justify-content: center; 
+    gap: 10px;              
+}
+
+nav .logo-img {
+    width: 30px; /* Установите нужный размер изображения */
+    height: auto;
+}
+
+nav .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Стили для контейнера кнопок */
+.header-button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    gap: 10px;              
+}
+
+/* Стили для кнопки Get Started */
+nav .get-started {
+    height: 42px;
+    background: #d76b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Стили для кнопки Instagram */
+nav .get-inst {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3); 
+}
+
+/* Герой-секция */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #8c4b26;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.book-now, .watch-video {
+    background: #d76b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.watch-video {
+    background: white;
+    color: #d76b00;
+    border: 2px solid #d76b00;
+}
+
+/* Отзывы */
+.testimonials {
+    padding: 50px;
+    background: #fff;
+}
+
+.testimonial {
+    background: #f3ede5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.client-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
