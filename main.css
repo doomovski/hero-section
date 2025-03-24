@@ -8,7 +8,7 @@ body {
     padding: 0;
     background-color: #f9f5ec;
     color: #333;
-    background-image: url('/img/back.jpg');
+    background-image: url('/img/back.svg');
     background-size: cover;
     background-position: center; /* Центрирует изображение */
     background-repeat: no-repeat; /* Запрещает повторение изображения */
@@ -158,6 +158,7 @@ nav .get-inst {
 /* Отзывы */
 .testimonials {
     padding: 50px;
+    padding-bottom: 0;
     width: 50%;
     max-width: 800px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -232,16 +233,20 @@ nav .get-inst {
     height: 230px;
     line-height: 1.5;
     font-size: 20px;
-    display: flex; /* Включаем Flexbox */
-    flex-direction: column; /* Располагаем элементы по вертикали */
-    justify-content: space-between; /* Текст вверху, client-info внизу */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    max-height: 210px;
+}
+
+.testimonial p{
+    margin-bottom: 0;
 }
 
 .client-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
 }
 
 .av-tx {
