@@ -388,8 +388,8 @@ nav .get-inst:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: #ffffff;
     border-radius: 25px;
     cursor: pointer;
@@ -402,4 +402,15 @@ nav .get-inst:hover{
     margin: 0;
     width: 30px;
     height: auto;
+    transition: filter 0.3s ease; /* Плавная смена цвета значка */
+}
+
+/* Инвертированное состояние кнопки лайка */
+.like-button.inverted {
+    background-color: #000000; /* Оранжевый фон */
+    
+}
+
+.like-button.inverted .like-img {
+    filter: invert(1); /* Инверсия цвета значка (например, черный -> белый) */
 }
