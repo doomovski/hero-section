@@ -214,7 +214,7 @@ nav .get-inst:hover{
     border: none;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
     gap: 10px;
-    overflow: hidden; /* Для анимации */
+    overflow: hidden; 
 }
   
   .watch-video span {
@@ -253,68 +253,91 @@ nav .get-inst:hover{
 .testimonials {
     padding: 50px;
     padding-bottom: 0;
-    width: 50%;
+    padding-right: 0px;
+    width: 750px; 
     max-width: 800px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; 
 }
-.testimonials-header{
+
+.testimonials-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-.testimonials h2{
+
+.testimonials h2 {
     color: #8c4b26;
     font-weight: 600;
     font-family: Josefin Sans;
     font-size: 30px;
 }
 
-.testimonials-button{
+.testimonials-button {
     display: flex;
     gap: 15px;
+    padding-right: 10px;
 }
 
-.get-left{
-    justify-content: center; 
+.get-left, .get-right {
+    justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
     border-radius: 25px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.get-left {
+    background-color: #fffefe;
+}
+
+.get-right {
     background-color: #ffffff;
-    border: none;
-    padding: 0;
-}
-.get-right{
-    justify-content: center; 
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #d76b00;
-    border: none;
-    padding: 0;
 }
 
-.swap-img-left{
+.swap-img-left, .swap-img-right {
+    width: 30px;
+    height: auto;
+}
+
+.swap-img-left {
     padding-left: 4px;
     padding-top: 3px;
-    width: 30px; 
-    height: auto;
 }
 
-.swap-img-right{
+.swap-img-right {
     padding-right: 4px;
     padding-top: 3px;
-    width: 30px; 
-    height: auto;
 }
 
-.row{
+.get-left:active {
+    background-color: #d76b00;
+    transition: 1s;
+}
+
+.get-right:active {
+    background-color: #d76b00;
+    transition: 1s;
+}
+
+.get-left:active .swap-img-left {
+    content: url("/img/left-white.png"); 
+}
+
+.get-right:active .swap-img-right {
+    content: url("/img/right-white.png"); 
+}
+
+
+.row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    transition: transform 0.5s ease;
     gap: 20px;
+    width: fit-content; 
 }
 
 .testimonial {
@@ -323,17 +346,18 @@ nav .get-inst:hover{
     padding-top: 5px;
     border-radius: 10px;
     margin-bottom: 20px;
-    width: 300px;
+    width: 320px;
     height: 230px;
     line-height: 1.5;
     font-size: 20px;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+    flex-shrink: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-height: 210px;
 }
 
-.testimonial p{
+.testimonial p {
     margin-bottom: 0;
 }
 
@@ -345,7 +369,6 @@ nav .get-inst:hover{
 
 .av-tx {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -380,4 +403,3 @@ nav .get-inst:hover{
     width: 30px;
     height: auto;
 }
-
