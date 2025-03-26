@@ -1,6 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Основные стили */
+/* шаблоны анимаций */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Основные стили страницы */
 body {
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
@@ -14,23 +44,36 @@ body {
     background-attachment: fixed;
 }
 
-/* Навигация */
+
+/* Хеддер */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 60px;
     padding-top: 40px;
+    animation: fadeInDown 1.6s ease-out both;
 }
 
+/* Логотип */
 nav .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+nav .logo:hover {
+    transform: scale(1.05);
 }
 
 .logo-img {
     width: 30px;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+nav .logo:hover .logo-img {
+    transform: rotate(15deg);
 }
 
 .inst-img{
@@ -38,6 +81,7 @@ nav .logo {
     height: auto;
     padding-top: 3px;
     padding-left: 1px;
+    transition: transform 0.3s ease;
 }
 
 nav .logo-text {
@@ -46,12 +90,53 @@ nav .logo-text {
     color: #000000;
 }
 
+nav .logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+nav .logo:hover .logo-text::after {
+    width: 100%;
+}
+
+/* Навигационная панель */
 nav ul {
     list-style: none;
     display: flex;
     gap: 5px;
     margin: 0;
     padding: 0;
+}
+
+nav li {
+    position: relative;
+    overflow: hidden;
+}
+
+
+nav a {
+    color: #6e6e6e;
+    transition: all 0.3s ease;
+    padding: 0px 5px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    position: relative;
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+nav li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
 nav a {
@@ -73,10 +158,10 @@ nav a:hover {
     border: none;
     cursor: pointer;
     padding: 5px 10px;
-    display: none; /* Убеждаемся, что кнопка видна */
+    display: none; 
 }
 
-/* Стили для кнопок в шапке */
+/* Стили для кнопок в хеддере */
 .header-button {
     display: flex;
     align-items: center;
@@ -137,7 +222,7 @@ nav .get-inst:hover {
     width: 125px;
 }
 
-/* Герой-секция */
+/* Основная часть */
 .hero {
     display: flex;
     align-items: center;
@@ -147,13 +232,19 @@ nav .get-inst:hover {
 
 .hero-content {
     max-width: 55%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
+/* Заголовок с текстом */
 .hero h1 {
     font-size: 70px;
     color: #8c4b26;
     margin: 20px 0 50px;
     font-weight: 400;
+    animation-delay: 0.5s;
 }
 
 .hero p {
@@ -162,12 +253,15 @@ nav .get-inst:hover {
     color: #777777;
     margin-bottom: 50px;
     line-height: 1.5;
+    animation-delay: 0.7s;
 }
 
+/* Кнопки перехода */
 .main-button {
     display: flex;
     align-items: center;
     gap: 20px;
+    animation-delay: 0.9s;
 }
 
 .book-now {
@@ -245,20 +339,28 @@ nav .get-inst:hover {
     width: 100%;
 }
 
-/* Отзывы */
+/* Часть с отзывами */
 .testimonials {
     padding: 50px;
     padding-bottom: 0;
     padding-right: 0;
     max-width: 800px;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
+/* Стили хеддера отзывов */
 .testimonials-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.7s;
 }
 
 .testimonials h2 {
@@ -267,10 +369,16 @@ nav .get-inst:hover {
     font-size: 30px;
 }
 
+/* Кнопки управления каруселью */
 .testimonials-button {
     display: flex;
     gap: 15px;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 1.2s;
+    padding-right: 2px;
 }
+
 
 .get-left, .get-right {
     width: 50px;
@@ -278,28 +386,60 @@ nav .get-inst:hover {
     border-radius: 25px;
     border: none;
     cursor: pointer;
-}
-
-.get-left {
-    background-color: #fffefe;
-}
-
-.get-right {
+    transition: all 0.3s ease;
     background-color: #ffffff;
 }
 
-.swap-img-left, .swap-img-right {
-    width: 30px;
-    height: auto;
+
+.get-left:active {
+    background-color: #d76b00;
+    transition: 1s;
 }
 
+.get-left:hover {
+    transform: scale(1.1);
+}
+
+.get-right:active {
+    background-color: #d76b00;
+    transition: 1s;
+}
+
+.get-right:hover {
+    transform: scale(1.1);
+}
+
+.get-left:active .swap-img-left {
+    content: url("/img/left-white.png"); 
+}
+
+.get-right:active .swap-img-right {
+    content: url("/img/right-white.png"); 
+}
+
+.swap-img-left {
+    width: 30px;
+    height: auto;
+    padding-top: 5px;
+    padding-left: 6px;
+}
+
+.swap-img-right {
+    width: 30px;
+    height: auto;
+    padding-top: 5px;
+    padding-right: 6px;
+}
+
+/* Контейнер карусели */
 .row {
     display: flex;
     transition: transform 0.5s ease;
     gap: 20px;
     width: fit-content;
+    padding-bottom: 20px;
 }
-
+/* Элемент карусели */
 .testimonial {
     background: #ffffff;
     padding: 20px;
@@ -315,8 +455,20 @@ nav .get-inst:hover {
     flex-direction: column;
     justify-content: space-between;
     max-height: 210px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
 }
 
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Стили наполнения карточек */
 .client-info {
     display: flex;
     justify-content: space-between;
@@ -335,14 +487,24 @@ nav .get-inst:hover {
     margin-right: 10px;
 }
 
+.text-info{
+    display: flex;
+    flex-direction: column;
+}
+
 .like-button {
-    width: 60px;
+    width: 50px;
     height: 50px;
     background: #ffffff;
     border-radius: 25px;
     cursor: pointer;
     border: none;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.like-button:hover {
+    transform: scale(1.1);
 }
 
 .like-img {
@@ -360,7 +522,8 @@ nav .get-inst:hover {
 
 /* Медиа-запросы */
 
-/* Ноутбуки (до 1200px) */
+/* Ноутбуки (до 1440px) */
+/* Уменьшение всех элементов */
 @media (max-width: 1440px) {
     nav {
         padding: 0 40px;
@@ -395,6 +558,8 @@ nav .get-inst:hover {
     }
 }
 
+/* Ноутбуки поменьше (до 1024px) */
+/* Уменьшение всех элементов */
 @media (max-width: 1024px) {
 
     nav .logo-text {
@@ -486,18 +651,19 @@ nav .get-inst:hover {
 }
 
 /* Планшеты (до 768px) */
+/* Центрирование всех элементов */
 @media (max-width: 768px) {
     nav {
         padding: 0 20px;
         padding-top: 20px;
         display: flex;
-        align-items: center; /* Центрирование по горизонтали */
+        align-items: center; 
         width: auto;
         margin-bottom: 50px;
     }
 
     nav .logo {
-        justify-content: center; /* Логотип по центру */
+        justify-content: center; 
     }
 
     nav .logo-text {
@@ -514,18 +680,18 @@ nav .get-inst:hover {
     }
     nav ul {
         gap: 0px;
-        justify-content: center; /* Центрирование ссылок */
-        flex-wrap: wrap; /* Если ссылок много, они будут переноситься */
+        justify-content: center; 
+        flex-wrap: wrap; 
     }
 
     nav a {
         font-size: 18px;
-        text-align: center; /* Текст ссылок по центру */
+        text-align: center; 
     }
 
     .header-button {
         gap: 10px;
-        justify-content: center; /* Кнопки по центру */
+        justify-content: center; 
     }
 
     nav .get-started {
@@ -537,7 +703,7 @@ nav .get-inst:hover {
         flex-direction: column;
         padding: 30px;
         text-align: center;
-        align-items: center; /* Центрирование содержимого */
+        align-items: center; 
         margin-bottom: 50px;
     }
 
@@ -545,7 +711,7 @@ nav .get-inst:hover {
         max-width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрирование текста и кнопок */
+        align-items: center; 
     }
 
     .hero h1 {
@@ -559,7 +725,7 @@ nav .get-inst:hover {
     }
 
     .main-button {
-        justify-content: center; /* Кнопки Book Now и Watch Video по центру */
+        justify-content: center; 
     }
 
     .testimonials {
@@ -567,7 +733,7 @@ nav .get-inst:hover {
         max-width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрирование всей секции */
+        align-items: center; 
     }
 
     .testimonials-header {
@@ -576,53 +742,54 @@ nav .get-inst:hover {
     }
 
     .testimonials h2 {
-        margin-bottom: 15px; /* Отступ между заголовком и кнопками */
+        margin-bottom: 15px; 
     }
 
     .testimonials-button {
-        justify-content: center; /* Кнопки карусели по центру */
+        justify-content: center; 
     }
 
     .testimonial {
         width: 280px;
         height: 200px;
         font-size: 18px;
-        text-align: center; /* Текст внутри отзыва по центру */
+        text-align: center; 
     }
 
     .client-info {
-        justify-content: center; /* Аватар и лайк по центру */
-        gap: 10px; /* Отступ между аватаром и кнопкой */
+        justify-content: center; 
+        gap: 10px; 
     }
 
     .av-tx {
-        justify-content: center; /* Аватар и текст по центру */
+        justify-content: center; 
     }
 }
 
 /* Телефоны (до 480px) */
+/* Центрирование всех элементов и добавление бургер-меню */
 @media (max-width: 480px) {
     nav {
         padding: 0 15px;
         padding-top: 15px;
         position: relative;
-        justify-content: space-between; /* Бургер слева, логотип по центру */
+        justify-content: space-between; 
+        animation: none;
     }
     
     .burger {
         display: block;
-        order: -1; /* Бургер в начале */
+        order: -1; 
         font-size: 24px;
         background: none;
         border: none;
         cursor: pointer;
         height: auto;
-        transition: 0.5s; /* Плавность для бургера */
+        transition: 0.5s; 
         position: relative;
-        z-index: 101; /* Поверх меню */
+        z-index: 101; 
     }
     
-    /* Логотип по центру */
     .logo {
         display: flex;
         align-items: center;
@@ -630,18 +797,17 @@ nav .get-inst:hover {
         flex-grow: 1;
     }
     
-    /* Скрываем навигацию и кнопки по умолчанию */
     nav ul,
     .header-button {
     display: none;
     }
 
-/* Когда меню открыто */
+
     nav ul.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed; /* Меню на весь экран */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100vw;
@@ -660,19 +826,15 @@ nav .get-inst:hover {
         padding-bottom: 50px;
     }
 
-/* Показываем меню */
-
-
-/* Кнопки внутри меню (если они должны быть внизу) */
     .header-button.active {
     display: flex;
     align-items: center;
-    position: fixed; /* Фиксируем внизу экрана */
+    position: fixed; 
     bottom: 50px;
     width: 90%;
     padding-right: 20px;
-    z-index: 101; /* Над меню */
-    gap: 30px
+    z-index: 101; 
+    gap: 30px;
     }
     
     nav .get-started{
@@ -717,6 +879,7 @@ nav .get-inst:hover {
 
     .testimonials h2 {
         font-size: 24px;
+        padding-right: 10px;
     }
 
     .testimonial {
@@ -752,7 +915,8 @@ nav .get-inst:hover {
         width: 25px;
     }
 }
-
+/* Телефоны (до 320px) */
+/* легкие доработки по ориентацие */
 @media (max-width: 320px){
     .hero{
         padding-bottom: 0px;
