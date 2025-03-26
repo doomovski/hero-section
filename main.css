@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 /* Основные стили */
 body {
-    font-family: Josefin Sans;
+    font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f5ec;
     color: #333;
     background-image: url('/img/back.svg');
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Навигация */
@@ -20,22 +19,25 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 60px;
+    padding: 0 60px;
     padding-top: 40px;
-
-    
 }
 
 nav .logo {
-    display: flex;           
-    align-items: center;     
-    justify-content: center; 
-    gap: 10px;              
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo-img {
-    width: 30px; 
+    width: 30px;
+}
+
+.inst-img{
+    width: 30px;
     height: auto;
+    padding-top: 3px;
+    padding-left: 1px;
 }
 
 nav .logo-text {
@@ -48,32 +50,39 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 5px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
-    color: #6e6e6e; 
-    background: transparent; 
+    color: #6e6e6e;
     transition: all 0.3s ease;
-    display: inline-block;
-    padding: 8px 10px;
+    padding: 0px 5px;
     text-decoration: none;
     font-size: 20px;
-  }
-  
-  nav a:hover {
-    color: #000000 !important; 
-    background: none; 
-  }
-
-/* Стили для контейнера кнопок */
-.header-button {
-    display: flex;
-    justify-content: center; 
-    align-items: center;    
-    gap: 15px;              
 }
 
-/* Стили для кнопки Get Started */
+nav a:hover {
+    color: #000000;
+}
+
+/* Бургер-меню */
+.burger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: none; /* Убеждаемся, что кнопка видна */
+}
+
+/* Стили для кнопок в шапке */
+.header-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 nav .get-started {
     display: flex;
     justify-content: center;
@@ -92,20 +101,20 @@ nav .get-started {
     transition: 0.5s;
 }
 
+nav .get-started:hover {
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
 nav .get-started:after {
     content: '»';
     font-size: 30px;
     position: absolute;
-    opacity: 0;  
+    opacity: 0;
     right: -20px;
-    top: 45%;              
-    transform: translateY(-50%); 
+    top: 45%;
+    transform: translateY(-50%);
     transition: 0.5s;
-}
-
-nav .get-started:hover {
-    padding-right: 24px;
-    padding-left: 8px;
 }
 
 nav .get-started:hover:after {
@@ -113,32 +122,21 @@ nav .get-started:hover:after {
     right: 10px;
 }
 
-/* Стили для кнопки Instagram */
 nav .get-inst {
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
     width: 48px;
     height: 48px;
     background: #ffffff;
     border-radius: 25px;
     cursor: pointer;
-    padding: 0;
     border: none;
-    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3); 
-    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-nav .get-inst:hover{
-    width:125px;
-    background-color: white;
-    transition:.3s;
-  }
-  
-  .button:active{
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-    transition: .05s
-  }
-  
+
+nav .get-inst:hover {
+    width: 125px;
+}
+
 /* Герой-секция */
 .hero {
     display: flex;
@@ -154,8 +152,7 @@ nav .get-inst:hover{
 .hero h1 {
     font-size: 70px;
     color: #8c4b26;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 20px 0 50px;
     font-weight: 400;
 }
 
@@ -172,28 +169,26 @@ nav .get-inst:hover{
     align-items: center;
     gap: 20px;
 }
-  
+
 .book-now {
     font-size: 18px;
     height: 55px;
     width: 130px;
-    background: #d76b00; 
-    color: white; 
+    background: #d76b00;
+    color: white;
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
-    border: 1px solid #d76b00; 
-    outline: none;
+    border: 1px solid #d76b00;
     transition: 0.5s ease-in-out;
 }
 
 .book-now:hover {
-    background: white; 
-    color: #d76b00; 
-    border: 2px solid #d76b00; 
-    transition: 0.3s ease-in-out;
+    background: white;
+    color: #d76b00;
+    border: 2px solid #d76b00;
 }
-  
+
 .watch-video {
     display: flex; 
     justify-content: center; 
@@ -202,6 +197,7 @@ nav .get-inst:hover{
     height: 55px;
     font-family: sans-serif;
     text-decoration: none;
+    background-color: #fff;
     color: #333;
     letter-spacing: 2px;
     position: relative;
@@ -214,14 +210,14 @@ nav .get-inst:hover{
     border: none;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
     gap: 10px;
-    overflow: hidden; 
+    overflow: hidden;
 }
-  
-  .watch-video span {
+
+.watch-video span {
     position: relative;
     z-index: 2;
 }
-  
+
 .watch-video:after {
     position: absolute;
     content: "";
@@ -234,17 +230,17 @@ nav .get-inst:hover{
     border-radius: 25px;
     z-index: 1;
 }
-  
+
 .watch-video:hover {
     color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .watch-video:hover .logo-img {
-    content: url("/img/play_white.png"); 
+    content: url("/img/play_white.png");
     z-index: 3;
 }
-  
+
 .watch-video:hover:after {
     width: 100%;
 }
@@ -253,11 +249,9 @@ nav .get-inst:hover{
 .testimonials {
     padding: 50px;
     padding-bottom: 0;
-    padding-right: 0px;
-    width: 750px; 
+    padding-right: 0;
     max-width: 800px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .testimonials-header {
@@ -270,24 +264,19 @@ nav .get-inst:hover{
 .testimonials h2 {
     color: #8c4b26;
     font-weight: 600;
-    font-family: Josefin Sans;
     font-size: 30px;
 }
 
 .testimonials-button {
     display: flex;
     gap: 15px;
-    padding-right: 10px;
 }
 
 .get-left, .get-right {
-    justify-content: center;
-    align-items: center;
     width: 50px;
     height: 50px;
     border-radius: 25px;
     border: none;
-    padding: 0;
     cursor: pointer;
 }
 
@@ -304,40 +293,11 @@ nav .get-inst:hover{
     height: auto;
 }
 
-.swap-img-left {
-    padding-left: 4px;
-    padding-top: 3px;
-}
-
-.swap-img-right {
-    padding-right: 4px;
-    padding-top: 3px;
-}
-
-.get-left:active {
-    background-color: #d76b00;
-    transition: 1s;
-}
-
-.get-right:active {
-    background-color: #d76b00;
-    transition: 1s;
-}
-
-.get-left:active .swap-img-left {
-    content: url("/img/left-white.png"); 
-}
-
-.get-right:active .swap-img-right {
-    content: url("/img/right-white.png"); 
-}
-
-
 .row {
     display: flex;
     transition: transform 0.5s ease;
     gap: 20px;
-    width: fit-content; 
+    width: fit-content;
 }
 
 .testimonial {
@@ -346,7 +306,7 @@ nav .get-inst:hover{
     padding-top: 5px;
     border-radius: 10px;
     margin-bottom: 20px;
-    width: 320px;
+    width: 350px;
     height: 230px;
     line-height: 1.5;
     font-size: 20px;
@@ -355,10 +315,6 @@ nav .get-inst:hover{
     flex-direction: column;
     justify-content: space-between;
     max-height: 210px;
-}
-
-.testimonial p {
-    margin-bottom: 0;
 }
 
 .client-info {
@@ -379,38 +335,439 @@ nav .get-inst:hover{
     margin-right: 10px;
 }
 
-.text-info {
-    display: flex;
-    flex-direction: column;
-}
-
 .like-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
+    width: 60px;
     height: 50px;
     background: #ffffff;
     border-radius: 25px;
     cursor: pointer;
-    padding: 0;
     border: none;
-    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .like-img {
-    margin: 0;
     width: 30px;
-    height: auto;
-    transition: filter 0.3s ease; /* Плавная смена цвета значка */
+    height: 30px;
 }
 
-/* Инвертированное состояние кнопки лайка */
 .like-button.inverted {
-    background-color: #000000; /* Оранжевый фон */
-    
+    background-color: #000000;
 }
 
 .like-button.inverted .like-img {
-    filter: invert(1); /* Инверсия цвета значка (например, черный -> белый) */
+    filter: invert(1);
+}
+
+/* Медиа-запросы */
+
+/* Ноутбуки (до 1200px) */
+@media (max-width: 1440px) {
+    nav {
+        padding: 0 40px;
+        padding-top: 30px;
+    }
+
+    .hero {
+        padding: 40px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .testimonials-header{
+        padding-right: 15px;
+    }
+
+    .testimonials {
+        padding: 40px;
+        padding-right: 0;
+        max-width: 700px;
+    }
+
+    .testimonial {
+        width: 290px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    nav .logo-text {
+        font-size: 25px;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    nav {
+        padding: 0 30px;
+        padding-top: 30px;
+        width: 960px;
+        gap: 20px;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+
+    nav .logo-img{
+        width: 20px;
+    }
+    nav .get-inst{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    nav .get-started{
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+        padding: 10px;
+
+    }
+
+    nav .get-started:after {
+        content: '»';
+        font-size: 20px;
+        position: absolute;
+        opacity: 0;
+        right: -20px;
+        top: 46.3%;
+        transform: translateY(-50%);
+        transition: 0.5s;
+    }
+
+    .hero {
+        padding: 40px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .book-now{
+        width: 100px;
+        height: 50px;
+        font-size: 15px;
+        padding: 0;
+    }
+
+    .watch-video{
+        font-size: 15px;
+        width: 160px;
+        height: 50px;
+        padding: 0px 10px;
+        
+    }
+
+    .testimonials-header{
+        padding-right: 15px;
+    }
+    .testimonials {
+        padding: 40px;
+        padding-right: 0;
+        max-width: 700px;
+    }
+
+    .testimonial {
+        width: 290px;
+        height: 220px;
+    }
+}
+
+/* Планшеты (до 768px) */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 20px;
+        padding-top: 20px;
+        display: flex;
+        align-items: center; /* Центрирование по горизонтали */
+        width: auto;
+        margin-bottom: 50px;
+    }
+
+    nav .logo {
+        justify-content: center; /* Логотип по центру */
+    }
+
+    nav .logo-text {
+        font-size: 20px;
+    }
+
+    nav .logo-img{
+        width: 20px;
+    }
+    nav .get-inst{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+    nav ul {
+        gap: 0px;
+        justify-content: center; /* Центрирование ссылок */
+        flex-wrap: wrap; /* Если ссылок много, они будут переноситься */
+    }
+
+    nav a {
+        font-size: 18px;
+        text-align: center; /* Текст ссылок по центру */
+    }
+
+    .header-button {
+        gap: 10px;
+        justify-content: center; /* Кнопки по центру */
+    }
+
+    nav .get-started {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+        align-items: center; /* Центрирование содержимого */
+        margin-bottom: 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование текста и кнопок */
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin: 10px 0 30px;
+    }
+
+    .hero p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .main-button {
+        justify-content: center; /* Кнопки Book Now и Watch Video по центру */
+    }
+
+    .testimonials {
+        padding: 0;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование всей секции */
+    }
+
+    .testimonials-header {
+        display: flex;
+        width: 90%;
+    }
+
+    .testimonials h2 {
+        margin-bottom: 15px; /* Отступ между заголовком и кнопками */
+    }
+
+    .testimonials-button {
+        justify-content: center; /* Кнопки карусели по центру */
+    }
+
+    .testimonial {
+        width: 280px;
+        height: 200px;
+        font-size: 18px;
+        text-align: center; /* Текст внутри отзыва по центру */
+    }
+
+    .client-info {
+        justify-content: center; /* Аватар и лайк по центру */
+        gap: 10px; /* Отступ между аватаром и кнопкой */
+    }
+
+    .av-tx {
+        justify-content: center; /* Аватар и текст по центру */
+    }
+}
+
+/* Телефоны (до 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 0 15px;
+        padding-top: 15px;
+        position: relative;
+        justify-content: space-between; /* Бургер слева, логотип по центру */
+    }
+    
+    .burger {
+        display: block;
+        order: -1; /* Бургер в начале */
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        height: auto;
+        transition: 0.5s; /* Плавность для бургера */
+        position: relative;
+        z-index: 101; /* Поверх меню */
+    }
+    
+    /* Логотип по центру */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    
+    /* Скрываем навигацию и кнопки по умолчанию */
+    nav ul,
+    .header-button {
+    display: none;
+    }
+
+/* Когда меню открыто */
+    nav ul.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; /* Меню на весь экран */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    margin: 0;
+    z-index: 100;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(0);
+    }
+    nav li{
+        padding-bottom: 60px;
+    }
+    nav a{
+        font-size: 30px;
+        padding-bottom: 50px;
+    }
+
+/* Показываем меню */
+
+
+/* Кнопки внутри меню (если они должны быть внизу) */
+    .header-button.active {
+    display: flex;
+    align-items: center;
+    position: fixed; /* Фиксируем внизу экрана */
+    bottom: 50px;
+    width: 90%;
+    padding-right: 20px;
+    z-index: 101; /* Над меню */
+    gap: 30px
+    }
+    
+    nav .get-started{
+        width: 200px;
+        height: 70px;
+        font-size: 25px;
+    }
+
+    nav .get-inst{
+        width: 70px;
+        height: 70px;
+    }
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+    
+
+    .book-now {
+        width: 110px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .watch-video {
+        min-width: 130px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .testimonials {
+        padding: 20px;
+        padding-right: 0;
+    }
+
+    .testimonials h2 {
+        font-size: 24px;
+    }
+
+    .testimonial {
+        width: 100%;
+        max-width: 200px;
+        height: 380px;
+        font-size: 16px;
+        padding: 15px;
+        padding-top: 5px;
+    }
+
+    .swap-img-left{
+        padding-top: 5px;
+        padding-left: 6px;
+    }
+
+    .swap-img-right{
+        padding-top: 5px;
+        padding-right: 6px;
+    }
+
+    .avatar-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .like-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .like-img {
+        width: 25px;
+    }
+}
+
+@media (max-width: 320px){
+    .hero{
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
+
+    .row{
+        padding-left: 60px;
+    }
+
+    .main-button{
+        flex-direction: column;
+    }
+
+    .book-now{
+        width: 180px;
+    }
 }
